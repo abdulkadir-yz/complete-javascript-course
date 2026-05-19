@@ -13,3 +13,10 @@
 
 // const hello = ' hello from seai#007';
 // console.log(hello.split(' ').slice(2, 4));
+//
+// const name = "Kadir";
+// const age = 25;
+//
+// console.log(`Merhaba benim adim ${name} ve ben ${age} yasindayim`);
+//
+// console.log("");
