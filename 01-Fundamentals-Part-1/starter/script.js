@@ -20,3 +20,33 @@
 // console.log(`Merhaba benim adim ${name} ve ben ${age} yasindayim`);
 //
 // console.log("");
+// myArr = ["Ansrew", "Kadir", "Efe"];
+// let x = 0;
+// while (x < myArr.length) {
+//     console.log(x);
+//     const a = myArr[x];
+//     console.log(a);
+//     x++;
+// }
+
+// let now = new Date();
+// console.log(`${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`);
+
+// const arr = ["John", "", "c"];
+// const x = (a,b) => a + b;
+//     return;
+// console.log(x(1,2));
+// console.log(x);
+// let firstName = "Kadir";
+// let lastName = "Yilmaz";
+// let age = 27;
+//
+// console.log('$firstName + $lastName + $age');
+//
+//  let firstName = "Kadir";
+// const lastName = "";
+// console.log(firstName + " " + lastName);
+// firstName= "Dilan";
+// // lastName= "Milk"; we cannot change the const variable. only we can change let
+// console.log(firstName);
+// console.log(lastName);
