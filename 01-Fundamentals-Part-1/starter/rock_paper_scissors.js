@@ -4,25 +4,44 @@ const readline = require("readline"); // readline module for user input, we can 
 
 
 const choices = ["rock", "paper", "scissors"];
-const computer = choices[Math.floor(Math.random() * 3)]; // Math.random() generates a random number between 0 (inclusive) and 1 (exclusive).
-                                                                  // By multiplying it by 3, we get a number between 0 and 3 (exclusive).
+// const computer = choices[Math.floor(Math.random() * 3)]; // Math.random() generates a random number between 0 (inclusive) and 1 (exclusive).
+// By multiplying it by 3, we get a number between 0 and 3 (exclusive).
                                                                   //Math.floor() then rounds it down to the nearest whole number,
                                                                    // giving us an index of 0, 1, or 2, which corresponds to "rock", "paper", or "scissors" in the choices array.
-
 const rl = readline.createInterface({  // in here we create Interface , process.stdin = listening to user input, process.stdout = writing output to console
   input: process.stdin,
   output: process.stdout,
 });
-rl.question("Your choice (rock - paper - scissors): ", (player) => {
-  rl.close();
+function playRound() {
+  const computer = choices[Math.floor(Math.random() * 3)]; // Math.random() generates a random number between 0 (inclusive) and 1 (exclusive).
+  // By multiplying it by 3, we get a number between 0 and 3 (exclusive).
+  //Math.floor() then rounds it down to the nearest whole number,
+  // giving us an index of 0, 1, or 2, which corresponds to "rock", "paper", or "scissors" in the choices array.
 
-  console.log(`You: ${player} | Computer: ${computer}`);
+    rl.question("Your choice (rock - paper - scissors): ", (player) => {
+    if (!choices.includes(player)) {
+      console.log("Invalid! Enter: rock, paper or scissors");
+      playRound();
+      return;
+    }
+      console.log(`You: ${player} | Computer: ${computer}`);
 
-  if (player === computer) console.log("One more time!");
-  else if (
-      (player === "rock"     && computer === "scissors") ||
-      (player === "scissors" && computer === "paper")    ||
-      (player === "paper"    && computer === "rock")
-  ) console.log("You win!");
-  else console.log("Computer wins!");
-});
+      if (player === computer) {
+        console.log("One more time!");
+        playRound();
+        }
+      else if (
+          (player === "rock"     && computer === "scissors") ||
+          (player === "scissors" && computer === "paper")    ||
+          (player === "paper"    && computer === "rock")
+      )
+      {
+        console.log("You win");
+        rl.close();
+      }
+      else {
+        console.log("Computer wins");
+      rl.close();}
+    });
+}
+playRound();

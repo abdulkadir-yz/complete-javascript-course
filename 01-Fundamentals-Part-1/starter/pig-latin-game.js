@@ -9,4 +9,4 @@ function pigLatin(word) {
     }
 }
 
-console.log(pigLatin("apple"));
+console.log(pigLatin("Kadir"));
