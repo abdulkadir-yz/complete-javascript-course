@@ -20,14 +20,14 @@ function playRound() {
 
     rl.question("Your choice (rock - paper - scissors): ", (player) => {
     if (!choices.includes(player)) {
-      console.log("Invalid! Enter: rock, paper or scissors");
+      console.log("Invalid, Use: rock, paper or scissors");
       playRound();
       return;
     }
-      console.log(`You: ${player} | Computer: ${computer}`);
+      console.log(`User: ${player} | Computer: ${computer}`);
 
       if (player === computer) {
-        console.log("One more time!");
+        console.log("One more time");
         playRound();
         }
       else if (
